@@ -89,6 +89,7 @@ GLOBAL OPTIONS:
         3. 基于6.2.1 我们计划实现一个新类型, 而实现上可以参考 `flag.DurationVar` 实现
             1. 本质是实现 `flag.Value` 接口
             2. 有几个变量需要: 存放解析结果的指针、解析命令行输入的Value、表示一个选项的flag
+            3. 
 
 
 

@@ -95,3 +95,49 @@
 
 #### 分布式锁
 - 
+
+
+#### defer
+- 延迟调用
+- 多个defer，后进先出
+- 常见应用场景
+    - 资源释放
+    - 异常捕获和处理
+
+#### panic
+
+#### 面向对象
+- 封装继承多态
+    - 封装
+        - 将数据和操作数据的方法绑定在一起，对外部隐藏实现细节
+    - 继承
+        - 继承属性和方法，可以重写父类方法以满足特定的需求
+    - 多态
+        - 不同对象对同一消息或方法调用产生不同相应或者行为
+- 没有类class，结构体类似类
+- 方法和函数
+    - 方法调用者不严格要求指针类型或者值类型
+
+
+
+#### 知识学习
+- go.dev
+- http server
+    - hello,world
+    - crud演化复杂逻辑
+        - 接入认证系统
+        - 受保护路由
+        - 实现自己的中间件
+        - context注入中间件 
+- cli tools 例如cobra、bubble tea
+    - 如何在cli里传不同flag
+    - 如何把状态从本地代入云端aws
+- grpc 
+    - http后端有瓶颈 转为微服务架构
+    - 微服务之间互相调用
+- pipeline jobs/scripts
+- 优秀资源
+    - lets-go-further
+    - learn go with test
+    - writing an interpreter in go 测试驱动开发
+    - 100 go mistamistakes and how to avoid them

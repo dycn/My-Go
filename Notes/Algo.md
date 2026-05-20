@@ -4,8 +4,8 @@
 
 1. 冒泡排序 
     - 序列中相邻元素两两对比，把最大或者最小的移动到最后      
-    - 时间复杂度    o(n^2)   
-    - 空间复杂度    o(1)
+    - 时间    o(n^2)   
+    - 空间    o(1)
 2. 选择排序 
     - 循环遍历序列，选出最大或者最小的，跟最前面的元素交换  
     - 时间    o(n^2)  
@@ -15,7 +15,7 @@
     - 时间    o(n^2)  
     - 空间    o(1)
 4. 希尔排序
-    - 是插入排序的一种改进版本，也称为缩小增量排序。它通过将待排序的列表分成若干子列表，对每个子列表进行插入排序，逐步缩小子列表的间隔，最终完成
+    - 是插入排序的一种改进版本，也称为缩小增量排序。它通过将待排序的列表按照步长(间隔)先对间隔步长的元素进行插入排序，然后逐步缩小步长长度，最终完成有序
     - 时间    O(n log n) 到 O(n²) 之间
     - 空间    O(1)
     - ***适用于中等规模的数据集，不稳定排序***
@@ -148,6 +148,48 @@
             return -1 // 未找到
         }
        ```
+
+8. 堆排序
+    - 堆是一种特殊的完全二叉树，从头到尾从大到小排序
+    - 对于任意数组(序号从1开始)中的一个节点，它的左子节点的序号是 2*x 右子节点序号是 2*x+1
+    - ```
+        func heapSort(arr []int) []int {
+            arrLen := len(arr) // 数组长度
+            
+            // 构建最大堆 从最后一个非叶子节点开始
+            for i := arrLen/2 - 1; i >= 0; i-- {
+                heapify(arr, i, arrLen)
+            }
+
+            for i := arrLen - 1; i >= 0; i-- {
+                swap(arr, 0, i)
+                arrLen -= 1
+                heapify(arr, 0, arrLen)
+            }
+            return arr
+        }
+
+        func heapify(arr []int, i, arrLen int) {
+            left := 2*i + 1
+            right := 2*i + 2
+            largest := i
+            if left < arrLen && arr[left] > arr[largest] {
+                largest = left
+            }
+            if right < arrLen && arr[right] > arr[largest] {
+                largest = right
+            }
+            if largest != i {
+                swap(arr, i, largest)
+                heapify(arr, largest, arrLen)
+            }
+        }
+
+        func swap(arr []int, i, j int) {
+            arr[i], arr[j] = arr[j], arr[i]
+        }   
+      ```
+
 
 	// 基数排序 根据不同位依次进行排序 最终遍历了每一位得到有序的队列
 

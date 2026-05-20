@@ -134,3 +134,8 @@ CREATE TABLE `tbl` (
         - 高频字段索引优化
     - 缓存 redis缓存 本地缓存
     - 布隆过滤器
+
+
+#### 慢查询排查
+- 启用慢查询日志 conf.d long_query_time=1
+- 慢查询分析工具 mysqldumpslow
